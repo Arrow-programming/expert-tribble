@@ -1,21 +1,195 @@
 <!DOCTYPE html>
+
+<!-- Animate underline-->
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hello</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo">
+        <title>New webpage</title>
         <style>
-            div {
-                padding: 100px;
-                background-color: rgb(0, 0, 0);
+            * {
+                transition: 1s;
             }
+            body {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+            a {
+                display: inline-block;
+                position: relative;
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }
+            a::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: rgb(255, 255, 255);
+                visibility: hidden;
+                transform: scaleX(0);
+                transition: all 0.3s ease-in-out 0s;
+            }
+            a:hover::before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+            #title-page {
+                background-color: rgb(41, 41, 41);
+                overflow: hidden;
+                width: 100vw;
+                height: 100vh;
+                color: white;
+                font-family: 'Exo';
+                display: flex; 
+                flex-direction: row; 
+                align-items: center; 
+                justify-content: center;
+            }
+            #title-page h1, h2{
+                color: white;
+                font-family: 'Exo';
+                text-align: center;
+                font-size: 47px;
+                z-index: 1;
+            }
+            #title-page p {
+                margin-top: 114px;
+                position: absolute;
+                color: white;
+                font-family: 'Exo';
+                text-align: center;
+                font-size: 18px;
+            }
+            
+            
+            #deco li {
+                height: 0px;
+                width: 6px;
+                background-color: rgb(100, 200, 100); 
+                position: absolute;
+                display: block;
+			    list-style: none;
+                top: 53.5%;
+                left: 77%;
+                box-shadow: 2px 2px 5px green; 
+                -webkit-animation: vertical 2s;
+                -moz-animation: vertical 2s; 
+                -o-animation: vertical 2s; 
+                animation: vertical 2s; 
+                animation-fill-mode: forwards;
+    
+    		}
+            #deco li:nth-child(1) {
+    			left: 75%;
+    			height: 0px;
+    			animation-delay: 0s;
+		    }
+		    #deco li:nth-child(2) {
+    			left: 67%;
+    			top: 68%;
+    			height: 171px;
+    			animation-delay: 2s;
+		    }
+		    #deco li:nth-child(3) {
+    			left: 58%;
+    			height: 171px;
+    			animation-delay: 3s;
+		    }
+            @keyframes vertical {
+                100% {
+                    height: 240px;
+                }
+            }
+            
+            #deco2 li {
+                height: 0px;
+                width: 6px;
+                background-color: rgb(100, 200, 100); 
+                position: absolute;
+                display: block;
+			    list-style: none;
+                box-shadow: 2px 2px 5px green; 
+                -webkit-animation: horizontal 2s;
+                -moz-animation: horizontal 2s; 
+                -o-animation: horizontal 2s; 
+                animation: horizontal 2s; 
+                animation-fill-mode: forwards;
+    
+    		}
+            
+		    #deco2 li:nth-child(1) {
+    			left: 59%;
+    			height: 6px;
+    			width: 10px;
+    			top: 95%;
+    			animation-delay: 0s;
+    		}
+		    #deco2 li:nth-child(2) {
+    			left: 75%;
+    			height: 1px;
+    			width: 10px;
+    			animation-delay: 0s;
+		    }
+		    
+            @keyframes horizontal {
+                100% {
+                    width: 240px;
+                }
+            }
+            
+            
         </style>
     </head>
     <body>
-    <div>
-        Stuff
-    </div>
-    <!--Iframe-->
-    <iframe src= "https://www.khanacademy.org/" style="height:200px;width:300px" title="Iframe Example"></iframe>
-
+        <!---->
+        <div id = "title-page">
+            
+            <!---->
+            <h1>
+                <span style = "color: rgb(100, 200, 100); text-shadow: 2px 2px 5px green;">
+                Arrow.
+                </span> 
+                <span style = "text-decoration: underline;
+                    text-decoration-color: rgb(100, 200, 100); text-shadow: 2px 2px 5px rgb(100, 200, 100); 
+  margin-left: -13px;">
+                    programming
+                </span>
+            </h1>
+            <ul id ="deco">
+    		    <li></li>
+    			<li></li>
+    			<li></li>
+			</ul>
+			<ul id ="deco2">
+    		    <li></li>
+    			
+			</ul>
+            <p>Lorem ipsum sit dom me amet</p>
+            
+        </div>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
